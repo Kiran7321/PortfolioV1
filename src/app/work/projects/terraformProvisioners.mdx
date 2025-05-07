@@ -1,0 +1,52 @@
+---
+title: "Deploying a Flask App with Terraform Provisioners"
+publishedAt: "2025-05-07"
+summary: "Using Terraform provisioners to automate the deployment and destruction of a Flask app that displays the top 25 animes."
+images:
+  - "/images/projects/project-01/flask1.png"
+team:
+  - name: "Sai Kommineni"
+    avatar: "/images/avatar.png"
+    linkedIn: "https://www.linkedin.com/in/sakirankommineni/"
+---
+
+## Overview
+
+This project demonstrates the use of Terraform provisioners to automate the deployment and destruction of a Flask app that shows the top 25 animes. By utilizing Terraform provisioners, we can streamline infrastructure management tasks like app deployment on EC2 instances, which otherwise would require manual scripts or additional tools like Ansible.
+
+## Key Features
+
+- **Automated Deployment**: Provision EC2 instances and deploy a Flask app using Terraform with the `remote-exec` provisioner.
+- **Local Execution**: Capture and format Terraform output into a file for easier auditing using the `local-exec` provisioner.
+- **File Provisioning**: Automatically copy necessary files (like the app code) to the provisioned resources with the `file` provisioner.
+- **Infrastructure Destruction**: Clean up resources with Terraform’s destruction capabilities, ensuring resources are removed efficiently after use.
+
+## Technologies Used
+
+- **Terraform**: Infrastructure as Code (IaC) tool to automate provisioning of cloud resources.
+- **AWS EC2**: Hosting the Flask app on an EC2 instance.
+- **Flask**: Python-based web framework used to build the anime app.
+
+## Challenges and Learnings
+
+A significant challenge was understanding how to automate complex tasks like deployment and destruction of resources without manual intervention. Using Terraform provisioners allows us to make resource creation and management seamless, though it’s essential to understand how the underlying infrastructure works to set up automation successfully. 
+
+## Outcome
+
+The Flask app is now automatically deployed using Terraform, simplifying the process of provisioning resources and maintaining the infrastructure. The project offers an excellent learning opportunity for anyone looking to master Terraform's provisioners and automate infrastructure management tasks.
+
+## Screenshots
+
+**Flask App**  
+![App Code](/images/projects/project-01/flask1.png)
+
+**Deployment Process**  
+![Deployment](/images/projects/project-01/flask2.png)
+
+**Destruction Process**  
+![Destruction](/images/projects/project-01/flask3.png)
+![Destruction](/images/projects/project-01/flask4.png)
+
+## Full Tutorial
+
+For a complete walkthrough, check out the [full tutorial video](https://www.youtube.com/watch?v=dX-sbUs9Sk0&list=PLdpzxOOAlwvI0O4PeKVV1-yJoX2AqIWuf&index=15).

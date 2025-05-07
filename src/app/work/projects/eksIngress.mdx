@@ -1,0 +1,44 @@
+---
+title: "Deploying a Real-time Game Application Using AWS EKS"
+publishedAt: "2024-03-20"
+summary: "Implementation of a scalable 2048 game application deployment on AWS using Elastic Kubernetes Service (EKS), with proper networking and load balancing for seamless accessibility."
+images:
+  - "/images/projects/project-01/2048.png"
+team:
+  - name: "Sai Kommineni"
+    avatar: "/images/avatar.png"
+    linkedIn: "linkedin.com/in/sakirankommineni/"
+---
+
+## Overview
+
+Implementation of a scalable 2048 game application on AWS using Elastic Kubernetes Service (EKS), showcasing container orchestration and cloud-native deployment practices with proper networking configuration for external access.
+
+## Key Features
+
+- **Kubernetes Orchestration**: Set up Kubernetes Pods to encapsulate application containers, ensuring efficient resource allocation and management within the AWS EKS cluster.
+- **Service Configuration**: Implemented Kubernetes Services to enable robust internal communication between Pods and facilitate access within the cluster environment.
+- **External Access**: Deployed an ALB Ingress Controller to expose the application beyond the EKS cluster, configuring an Application Load Balancer for optimal traffic routing to the appropriate services.
+- **AWS Integration**: Leveraged AWS CLI for seamless integration of the Ingress Controller with AWS infrastructure, ensuring consistent connectivity between services.
+
+## Technologies Used
+
+- **AWS EKS**: For managed Kubernetes orchestration in the cloud.
+- **AWS CLI**: For programmatic interaction with AWS services.
+- **Kubernetes**: For container orchestration and management.
+- **Docker**: For application containerization.
+- **ALB Ingress Controller**: For managing external access to services.
+
+## Challenges and Learnings
+
+A significant challenge was properly configuring the networking components to ensure seamless traffic flow from external users to the application running in Kubernetes Pods. This involved understanding the intricacies of AWS VPC networking, security groups, and how they integrate with Kubernetes ingress resources. The project provided valuable insights into cloud-native architecture patterns and the advantages of using managed Kubernetes services like EKS compared to self-managed alternatives.
+
+## Outcome
+
+The deployment successfully provides external users with access to the 2048 game application through a load-balanced endpoint, demonstrating a robust and scalable infrastructure pattern that can be replicated for other containerized applications. This implementation showcases the power of Kubernetes for managing complex deployments while leveraging AWS's managed services to reduce operational overhead.
+
+export default ({ children }) => (
+  <article className="project-content">
+    {children}
+  </article>
+);

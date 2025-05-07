@@ -1,0 +1,82 @@
+---
+title: "AWS SAA-C03 – Key Concepts"
+summary: "A concise review of key topics, best practices, and essential AWS services to prepare for the SAA-C03 exam."
+publishedAt: "2025-05-07"
+tag: "AWS Certification"
+---
+
+This guide covers essential topics to prepare for the AWS Certified Solutions Architect Associate (SAA-C03) exam 🚀. Let’s dive into the key concepts, best practices, and services you need to know!
+
+## 🔐 IAM Concepts
+
+- **IAM Users 👤:** Represent individual people or applications with long-term credentials (username, password, access keys).
+- **IAM Policies 📜:** JSON documents that define permissions; attached to users, groups, or roles.
+- **IAM Groups 👥:** Logical collections of users; apply policies to all members.
+- **IAM Roles 🎭:** Provide temporary credentials; used by AWS services, federated users, and cross-account access.
+
+**Good to know:**  
+- Use **MFA (Multi-Factor Authentication)** for additional security.  
+- Follow the **principle of least privilege** to minimize access risks.
+
+## 🛡️ Networking & Security
+
+- **Security Groups 🛡️:** Act as virtual firewalls at the EC2 instance level.  
+  - **Stateful 🔄**: Return traffic is automatically allowed.
+  - **Rules:** Only allow (no deny).
+
+- **Network ACLs 🚧:** Work at the subnet level.  
+  - **Stateless ↔️**: Return traffic must be explicitly allowed.
+  - **Rules:** Can allow or deny.
+
+### VPC Endpoints 🌐
+
+- **Interface Endpoints 🖧:** Use ENIs (Elastic Network Interfaces) with private IPs to connect securely to AWS services & SaaS apps.
+- **Gateway Endpoints 🚪:** Available for S3 & DynamoDB; added directly to your route tables.
+
+## 🖥️ Bastion Host
+
+A secure EC2 instance that lets you SSH/RDP into instances in private subnets 🔐. Best practice: Use with **Security Groups** and enable **session logging**.
+
+## ☁️ S3 & CloudFront
+
+- **S3 🗂️:**  
+  - Object storage with **99.999999999% (11 9’s)** durability.  
+  - Objects are **private by default**.  
+  - Encryption options: SSE-S3, SSE-KMS, SSE-C.
+
+- **CloudFront 🌎:**  
+  - Content Delivery Network (CDN).  
+  - Distribute static & dynamic content with low latency.  
+  - Use **signed URLs/cookies** for secure access.
+
+## ⚖️ Load Balancers
+
+- **Application Load Balancer (ALB) 🌐:**  
+  - Operates at Layer 7 (HTTP/HTTPS).  
+  - Supports path-based & host-based routing.
+
+- **Network Load Balancer (NLB) ⚡:**  
+  - Operates at Layer 4 (TCP/UDP).  
+  - Handles millions of requests per second.
+
+- **Gateway Load Balancer (GWLB) 🔄:**  
+  - Operates at Layer 3.  
+  - Integrates with security appliances (e.g., firewalls).
+
+## 🔗 AWS Transit Gateway
+
+Central hub that **connects multiple VPCs and on-premises networks**. Scalable and simplifies peering ⭐.
+
+## 🛡️ DDoS Protection & Security Services
+
+- **AWS Shield Standard 🛡️:** Always on; protects against common network/transport layer DDoS attacks.
+- **AWS Shield Advanced 🚨:** Enhanced protection with 24/7 DDoS response team support.
+- **AWS WAF 🔥:** Web Application Firewall; blocks malicious traffic at the application layer.
+- **Amazon GuardDuty 👁️:** Continuous security monitoring; detects threats using ML.
+- **Amazon Inspector 🕵️:** Automated security assessment service for EC2 & workloads.
+
+---
+
+💡 **Pro Tip:** Always keep up with the [AWS Well-Architected Framework](https://aws.amazon.com/architecture/well-architected/) to design secure, high-performing, resilient, and efficient infrastructure!
+
+Good luck with your exam preparation! 🎓✅

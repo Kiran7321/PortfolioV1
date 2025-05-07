@@ -1,0 +1,32 @@
+---
+title: "Automating with PowerShell"
+summary: "How I automated repetitive tasks using PowerShell, saving hours of manual effort."
+publishedAt: "2025-05-05"
+tag: "Automation"
+---
+
+## The Problem
+
+Repetitive tasks like bulk user creation, mailbox permissions, and reporting were consuming too much time.
+
+## My Solution
+
+I built PowerShell scripts that automated:
+- Bulk user onboarding
+- Delegating mailbox permissions
+- Exporting user reports
+
+Example snippet:
+
+<CodeBlock
+    codeInstances={[
+      {
+        code:
+`Get-ADUser -Filter * -SearchBase "OU=Staff,DC=domain,DC=com" | Export-Csv StaffList.csv`
+      }
+    ]}
+/>
+
+## The Impact
+
+These scripts saved my team 10+ hours per week and reduced human errors. Automation is the first step toward thinking like a DevOps engineer!
