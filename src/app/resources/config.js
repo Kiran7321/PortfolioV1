@@ -98,7 +98,7 @@ const display = {
 };
 
 const mailchimp = {
-  action: "https://embeds.beehiiv.com/3c1ced74-15bc-48ee-8589-e4d6bf23144c",
+  action: "https://embeds.beehiiv.com/3788c1b4-03f7-4b3b-8da0-11425c537325",
   effects: {
     mask: {
       cursor: true,
