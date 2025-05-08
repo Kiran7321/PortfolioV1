@@ -98,7 +98,7 @@ const display = {
 };
 
 const mailchimp = {
-  action: "https://gmail.us3.list-manage.com/subscribe/post?u=f91472e715c5cb416f9468a17&amp;id=bdddd0eb89&amp;f_id=00c9d6e3f0",
+  action: "https://embeds.beehiiv.com/3c1ced74-15bc-48ee-8589-e4d6bf23144c",
   effects: {
     mask: {
       cursor: true,
