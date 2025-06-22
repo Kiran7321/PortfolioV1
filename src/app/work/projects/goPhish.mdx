@@ -1,0 +1,45 @@
+---
+title: "Containerizing and Deploying Gophish for Phishing Simulations Using Docker and Kubernetes"
+publishedAt: "2025-06-22"
+summary: "Deployment of the Gophish phishing simulation platform using Docker and Kubernetes, providing a secure, containerized infrastructure to conduct awareness training and testing."
+images:
+  - "/images/projects/project-02/gophish.png"
+team:
+  - name: "Sai Kommineni"
+    avatar: "/images/avatar.png"
+    linkedIn: "linkedin.com/in/sakirankommineni/"
+---
+
+## Overview
+
+This project demonstrates the containerization and deployment of **Gophish**, a powerful open-source phishing framework, using **Docker** and **Kubernetes**. It focuses on enabling a scalable and isolated testing environment to simulate phishing campaigns in corporate or educational settings.
+
+## Key Features
+
+- **Containerization with Docker**: Gophish was packaged into a lightweight Docker image, enabling easy replication and deployment across environments.
+- **Persistent Storage**: Configured Kubernetes PersistentVolumeClaims to retain campaign data and user configurations even after pod restarts.
+- **Service Exposure**: Created Kubernetes Services to expose the Gophish admin dashboard and phishing server, allowing controlled access for testing and monitoring.
+- **Custom Configuration**: Customized Gophish’s config to bind the correct ports and interfaces, ensuring the admin dashboard and phishing landing pages are accessible externally or internally as needed.
+- **Secure Deployment**: Enabled network policies and optionally integrated TLS using cert-manager to ensure safe and secure access during campaign execution.
+
+## Technologies Used
+
+- **Docker**: For packaging the Gophish application into a container image.
+- **Kubernetes**: To orchestrate the deployment and scaling of Gophish across clusters.
+- **kubectl**: For interacting with Kubernetes resources during deployment.
+- **Helm (Optional)**: Can be used to streamline future deployments and version upgrades.
+- **Ingress Controller (Optional)**: For enabling domain-based routing and HTTPS.
+
+## Challenges and Learnings
+
+Configuring Gophish to work seamlessly in a containerized and orchestrated environment posed unique challenges, particularly around port management and persistent data. Understanding how Gophish binds to its admin and phishing interfaces was crucial to exposing the correct services. Additionally, ensuring that phishing simulation emails would not be blocked by spam filters required careful SMTP testing and DNS planning (SPF/DKIM/DMARC).
+
+## Outcome
+
+The deployment results in a fully functioning, containerized Gophish instance that can be easily scaled, restarted, or updated as needed. It enables secure, realistic phishing campaign simulations for cybersecurity awareness training, especially in enterprise or academic environments. The architecture serves as a template for securely deploying other cybersecurity tools using Kubernetes.
+
+export default ({ children }) => (
+  <article className="project-content">
+    {children}
+  </article>
+);
