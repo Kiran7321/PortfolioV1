@@ -1,0 +1,59 @@
+---
+title: "Installing Kali Linux on Surface Book with Custom Kernel Support"
+publishedAt: "2025-07-23"
+summary: "Step-by-step walkthrough of installing Kali Linux on a Microsoft Surface Book, configuring the custom Surface Linux kernel, and resolving common issues such as network compatibility and captive portal access."
+images:
+  - "/images/projects/project-01/kali.png"
+team:
+  - name: "Sai Kommineni"
+    avatar: "/images/avatar.png"
+    linkedIn: "linkedin.com/in/sakirankommineni/"
+---
+
+## Overview
+
+This post documents the installation and configuration of **Kali Linux** on a **Microsoft Surface Book**, leveraging the custom Surface Linux kernel to enable device-specific functionality. The process includes setting up display scaling, Wi-Fi, power management, and resolving two major issues post-installation: kernel regression and captive portal access on public networks.
+
+## Key Features
+
+- **Custom Surface Linux Kernel**: Installed a tailored kernel that supports the Surface Book's hardware, enabling touchscreen, better display scaling, and battery monitoring.
+- **Display Configuration**: Configured GNOME to handle the high-DPI screen (2736x1824 resolution), ensuring UI elements render correctly.
+- **Package Installation**: Used `dpkg` to install older kernel `.deb` packages to stabilize device-specific drivers.
+- **Wi-Fi and Networking**: Diagnosed and resolved issues with public Wi-Fi captive portals by identifying the proper URL to trigger redirection.
+
+## Technologies Used
+
+- **Kali Linux (Rolling Release)**: For penetration testing and security workflows.
+- **Surface Linux Kernel (linux-surface)**: From linux-surface GitHub repo, to add Surface-specific hardware support.
+- **GNOME Desktop Environment**: For a modern, scalable UI.
+
+## Issues Faced
+
+**❌ Issue #1**: Kernel Instability with Latest Version
+
+Problem:
+After installing the latest linux-surface kernel (v6.15+), the device is not showing the battery status, and touch screen is not working.
+
+Solution:
+Downgraded to kernel version 6.8.x by manually downloading .deb packages and installing them using:
+
+sudo dpkg -i linux-image-6.8.x-surface*.deb linux-headers-6.8.x-surface*.deb
+This restored stability and compatibility with Surface Book hardware.
+
+**❌ Issue #2**: Public Wi-Fi Captive Portal Not Loading
+
+Problem:
+When connecting to public Wi-Fi (e.g., airport or café), the captive portal did not show up, making it impossible to sign in and access the network.
+
+Root Cause:
+GNOME's NetworkManager didn't auto-trigger the portal redirection.
+
+Solution:
+Manually open the following URL in a browser to trigger the captive portal:
+
+**http://nmcheck.gnome.org/**
+
+After authentication, the network became usable.
+Outcome
+
+The final setup results in a fully functional Kali Linux environment on the Surface Book, with touch support, high-DPI scaling, working sleep mode, and stable Wi-Fi — even on public networks. The installation required a few manual steps, but the end result is a highly portable, powerful pentesting machine.
