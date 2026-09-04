@@ -69,7 +69,7 @@ const home = {
       top: "0.38em",     // Increased to move slightly down
       paddingTop: "-0.1em",
       marginLeft: "0.1em",  // Changed from negative to positive to move right
-    }}/> 
+    }}/>
     <br />
     where I keep systems running smoothly & help users solve problems. After hours, I build my own projects.
     </>
@@ -89,7 +89,7 @@ const about = {
     display: true,
   },
   calendar: {
-    display: true,
+    display: false,
     link: "https://cal.com",
   },
   intro: {
@@ -109,7 +109,7 @@ const about = {
     experiences: [
       {
         company: "Alfred Health",
-        timeframe: "2023 - Present",
+        timeframe: "2023 - 2026",
         role: "Technical Support Engineer",
         achievements: [
           <>
@@ -119,6 +119,22 @@ const about = {
           <>
             Automated repetitive tasks by creating custom PowerShell scripts-bulk 
             user creation, permission delegation, mailbox configurations, and reporting. 
+          </>,
+        ],
+        images: [
+          // optional: leave the array empty if you don't want to display images
+        ],
+      },
+      {
+        company: "Bayside Health",
+        timeframe: "2026 - Present",
+        role: "Data Engineer",
+        achievements: [
+          <>
+            Building and maintaining data pipelines, ETL processes, and data integrations to support analytics and reporting.
+          </>,
+          <>
+            Collaborated with cross-functional teams to improve data quality, implement monitoring, and optimise performance.
           </>,
         ],
         images: [
