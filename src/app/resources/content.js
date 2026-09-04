@@ -6,7 +6,7 @@ const person = {
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Tech Support Engineer",
+  role: "Data Ops Engineer",
   avatar: "/images/avatar.png",
   email: "saikirankommineni0@gmail.com",
   location: "Australia/Melbourne", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
@@ -63,7 +63,7 @@ const home = {
   subline: (
     <>
       Hey! I'm Sai 😺<br />
-      IT Support Engineer at <Logo icon={false} style={{ 
+      Data Ops Engineer at <Logo icon={false} style={{ 
       display: "inline-flex", 
       position: "relative",
       top: "0.38em",     // Increased to move slightly down
@@ -156,11 +156,29 @@ const about = {
     institutions: [
       {
         name: "Victorian Institue of Technology",
-        description: <>Studied software engineering.</>,
+        description: <>Completed Masters in IT & Systems</>,
       },
       {
         name: "Jawaharlal Nehru Technological University",
-        description: <>Studied computer science.</>,
+        description: <>Completed Bachelor of Technology, Computer Science.</>,
+      },
+    ],
+  },
+  certifications: {
+    display: true, // set to false to hide this section
+    title: "Certifications",
+    institutions: [
+      {
+        name: "AWS Solutions Acritect - Associate",
+        description: <>Sept 6, 2024</>,
+      },
+      {
+        name: "Azure Data Fundamentals",
+        description: <>Nov 4, 2024</>,
+      },
+      {
+        name: "Azure Fundamentals",
+        description: <>Oct 23, 2024</>,
       },
     ],
   },
